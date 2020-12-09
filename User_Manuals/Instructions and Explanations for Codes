@@ -1,5 +1,7 @@
 Question: 
-How has the percentage of condos/houses in the boroughs fluctuated over the last 5 years (2015 - 2019)? And Based on the data of the most recent year (2019), provide top 5 neighborhoods supplied most condos (or houses) for clients interested in condos (or houses). (use dataset I)
+How has the percentage of condos/houses in the boroughs fluctuated over the last 5 years (2015 - 2019)? 
+And Based on the data of the most recent year (2019), provide top 5 neighborhoods supplied most condos (or houses) for clients interested in condos (or houses). 
+(use dataset I)
 
 Data clean-up:
 1.	Only keep rows associated with the required building codes (noted in the Reference section).
