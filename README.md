@@ -14,6 +14,9 @@ Assume our clients have a lot of money and would like to do some investments in 
 
 ## Approach:
 
+
+
+
 ## Dataset I: “All Boroughs 2012 - 2019.csv”
 It contains annual sales price data by borough in NYC from 2012 to 2019. Each year the data has around 1,000,000 records on 21 fields such as sales price, zip code, residential unit, gross square feet and year built etc.
 Link: https://www1.nyc.gov/site/finance/taxes/property-annualized-sales-update.page
