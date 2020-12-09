@@ -1,3 +1,5 @@
-This is our data files that we used for our project 
-And the property selling price data is so large that we drop the link below for reference:
-https://drive.google.com/file/d/1rXxftfutBlTP1KzYKMcoOMF3dJ0s0zTZ/view?usp=sharing
+"User Input" contains all datasets for the project.
+
+***According to the website, Dataset I is too large to be saved on GitHub repository. Therefore, please refer to the link below to acquire Dataset I.
+    https://www.dropbox.com/s/ha6ytbrc5wm9ucf/AllBoroughs2012-2019.csv?dl=0
+
