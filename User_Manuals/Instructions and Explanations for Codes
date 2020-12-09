@@ -4,12 +4,12 @@ And Based on the data of the most recent year (2019), provide top 5 neighborhood
 (use dataset I)
 
 Data clean-up:
-1.	Only keep rows associated with the required building codes (noted in the Reference section).
+Only keep rows associated with the required building codes (noted in the Reference section).
 
 Steps to solve the problems:
-1.	Calculate the ratio of condos/houses for each borough.
-2.	Display the ratios in barchart.
-3.	Find out the top 5 neighborhoods providing most condos (or houses) in 2019 in each borough for clients interested in condos (or houses). 
+1. Calculate the ratio of condos/houses for each borough.
+2. Display the ratios in barchart.
+3. Find out the top 5 neighborhoods providing most condos (or houses) in 2019 in each borough for clients interested in condos (or houses). 
 
 Reference:
 - Building codes for condos: A3, A4, A5, A9, B1, B2, B3, C0, C1, C2, C3
