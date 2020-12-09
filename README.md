@@ -12,6 +12,8 @@ Assume our clients have a lot of money and would like to do some investments in 
 - Maybe seeing how densely populated a neighborhood is in comparison to another? (I found a dataset that can help us out with this)
 - What’s the distribution of 0 sale’s price? Is there any pattern that sale’s day related to a specific month or weekday?
 
+## Approach:
+
 ## Dataset I: “All Boroughs 2012 - 2019.csv”
 It contains annual sales price data by borough in NYC from 2012 to 2019. Each year the data has around 1,000,000 records on 21 fields such as sales price, zip code, residential unit, gross square feet and year built etc.
 Link: https://www1.nyc.gov/site/finance/taxes/property-annualized-sales-update.page
