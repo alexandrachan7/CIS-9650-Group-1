@@ -1,10 +1,11 @@
-# How has the percentage of condos/houses in the boroughs fluctuated over the last 5 years (2015-2019)?
-
 import pandas as pd
 df = pd.read_csv("AllBoroughs2012-2019.csv")
 
 import matplotlib.pyplot as plt
+import seaborn as sns
 
+df['SALE DATE'] = pd.to_datetime(df['SALE DATE'], errors='coerce')
+df['Sale Year'] = df['SALE DATE'].dt.year
 df["BOROUGH"]= df["BOROUGH"].replace(1, "Manhattan")
 df["BOROUGH"]= df["BOROUGH"].replace(2, "Bronx")
 df["BOROUGH"]= df["BOROUGH"].replace(3, "Brooklyn")
@@ -21,14 +22,11 @@ houses = df[(df["BUILDING CLASS AT PRESENT"] == "R0") | (df["BUILDING CLASS AT P
 num_condos = condos[condos["Sale Year"] >= 2015].groupby(["Sale Year", "BOROUGH"]).count()["ADDRESS"]
 num_houses = houses[houses["Sale Year"] >= 2015].groupby(["Sale Year", "BOROUGH"]).count()["ADDRESS"]
 
-ratio = num_condos / num_houses
+ratio = (num_condos / num_houses).to_frame().rename(columns = {'ADDRESS':'Ratio'})
 print("Ratios between condos and houses for NYC's 5 boroughs from 2015 to 2019:")
 print(ratio)
-ratio.plot.bar(color=['red', 'blue', 'purple', 'green', 'orange'])
-plt.title("Ratios between condos and houses for NYC's 5 boroughs (2015 - 2019)")
-plt.xlabel("Sale Year, Borough")
-plt.ylabel("Ratio")
-plt.show()
+sns.lineplot(data = ratio, x = 'Sale Year', y = 'Ratio', hue = 'BOROUGH')
+
 
 # Based on the data of the most recent year (2019), provide top 5 neighborhoods supplied most condos/houses for clients interested in condos/houses
 print("\nIn 2019, the top 5 neighborhoods supplied most condos are listed below:")
