@@ -2,17 +2,12 @@ import pandas as pd
 
 df = pd.read_csv('AllBoroughs2012-2019.csv', usecols = ['BOROUGH','BUILDING CLASS CATEGORY','GROSS SQUARE FEET','YEAR BUILT','SALE PRICE','Sale Year']) #only read in certain row
 
-
 df = df[(df['YEAR BUILT']!='') & (df['SALE PRICE'].str.isnumeric() == True) & (df['GROSS SQUARE FEET'].str.isnumeric() == True) & (df['BUILDING CLASS CATEGORY'] != "") & (df['YEAR BUILT'] != 0)]
-
-
 
 df['SALE PRICE'] = df['SALE PRICE'].astype(float) #convert from object to float
 df['GROSS SQUARE FEET'] = df['GROSS SQUARE FEET'].astype(float) 
 
-
 df = df[(df['SALE PRICE'] >= 70000) & (df['GROSS SQUARE FEET']>= 500) & df['BUILDING CLASS CATEGORY'].str.contains('FAMILY',na=True)] #filter the row
-
 
 #create new column based on BUILDING CLASS CATEGORY
 numofFamily = []
@@ -27,7 +22,6 @@ for n in df['BUILDING CLASS CATEGORY']:
          
 df['numofFamily'] = numofFamily #add new series to dataframe
 
-
 desiredborough=int("2") #User enters the desired borough 1=Manhattan, 2=The Bronx, 3=Brooklyn, 4=Queens, 5=Staten Island)
 desirednumofFamily=int("2") #User enters the total units) 1= one family house, 2=two family house, 3=three family house
 desiredgrosssquare= int("1209")#User enters the gross square)
@@ -37,7 +31,6 @@ desiredyearbuilt= int("2010") #User enters the year built)
 #desirednumofFamily=int(input("\n1=one family house, 2=two family house, 3=three family house\nPlease enter the number of family:"))
 #desiredgrosssquare= int(input("Please enters the gross square:"))
 #desiredyearbuilt= int(input("Please enters the year built:"))
-
 
 ########
 #find closest number 
