@@ -13,8 +13,7 @@ Assume our clients have a lot of money and would like to do some investments in 
 - What’s the distribution of 0 sale’s price? Is there any pattern that sale’s day related to a specific month or weekday?
 
 ## Approach:
-
-
+The code will be written in Python, mainly in Pandas environment. We play to build our code to run analysis based on different characteristics in the datasets. The program can be divided into two sections. In the first part, users will be requested to input information for the factors they are most interested in and the program will do the prediction accordingly. In the second, our program will do further analysis for real estate industry from different aspects, which will allow clients to have more information for their investment decisions.
 
 ## Datasets:
 ### Dataset I: “All Boroughs 2012 - 2019.csv”
