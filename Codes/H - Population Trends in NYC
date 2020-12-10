@@ -1,0 +1,51 @@
+Created on Sat Nov 28 19:03:38 2020
+
+@author: alexandrachan
+"""
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("/Users/alexandrachan/Desktop/New_York_City_Population_By_Community_Districts.csv")
+
+#Created percent change formulas to see how populations between communities are trending over time
+df['Percent_Change_L10'] = (df["Population_2010"] - df["Population_2000"])/ df["Population_2000"]
+df['Percent_Change_L40'] = (df["Population_2010"] - df["Population_1970"])/ df["Population_1970"]
+
+
+#To find the top 3 districts that had the biggest % chg growth within the last 10 years
+comname = (df.groupby("CD_Name").sum())
+
+print("Percent Change in Latest 10 Years")
+sort = ((comname.sort_values(["Percent_Change_L10"], ascending =False)).head(3))
+print((sort.head())["Percent_Change_L10"])
+
+#To find the top 3 districts that had the biggest % chg growth within the last 40 years
+
+print("Percent Change in Latest 40 Years")
+sort1 = ((comname.sort_values(["Percent_Change_L40"], ascending =False)).head(3))
+print((sort1.head())["Percent_Change_L40"])
+
+
+#Creating a bar chart to show the districts with the biggest % chg growth within latest 40 years
+g = df.groupby("CD_Name").sum()
+yyx = ((g.sort_values(["Percent_Change_L40"], ascending =False)).head(3))
+xoo = yyx.index.tolist()
+speed = g["Percent_Change_L40"]
+df = pd.DataFrame({'Population % Chg in Last 40 Years': speed}, index=xoo)
+axes = df.plot.bar(rot=7, subplots=True, color={"orange": "g"})
+
+#Creating a bar chart to show the districts with the biggest % chg growth within latest 10 years
+go = df.groupby("CD_Name").sum()
+yx = ((go.sort_values(["Percent_Change_L10"], ascending =False)).head(3))
+xo = yx.index.tolist()
+sp = go["Percent_Change_L10"]
+df = pd.DataFrame({'Districts with Biggest % Change in Latest 10 Years': sp}, index=xo)
+ax = df.plot.bar(rot=0, subplots=True, color={"orange": "go"})
+
+#Creating a bar chart to show the districts with the highest populations in 2010
+gg = df.groupby("CD_Name").sum()
+yy = ((gg.sort_values(["Population_2010"], ascending =False)).head(3))
+xx = yy.index.tolist()
+speed = gg["Population_2010"]
+df = pd.DataFrame({'Districts with Highest Population in 2010': speed}, index=xx)
+axx = df.plot.bar(rot=5, subplots=True, color={"orange": "gg"})
